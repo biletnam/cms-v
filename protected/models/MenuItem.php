@@ -13,7 +13,7 @@
  * The followings are the available model relations:
  * @property Menu $menu
  */
-class MenuItem extends CActiveRecord
+class MenuItem extends BasicModel
 {
     /**
      * Returns the static model of the specified AR class.
@@ -38,9 +38,10 @@ class MenuItem extends CActiveRecord
     public function rules()
     {
         return array(
-            array('menu_id, title, link', 'required'),
+            array('menu_id, title, link', 'required','message'=>''),
             array('title, link', 'length', 'max' => 128),
             array('menu_id', 'length', 'max' => 11),
+            array('link', 'match', 'pattern' => '/^[A-Za-z0-9\-_\/]+$/u', 'message' => 'Поле {attribute} должно содержать только латинские буквы, цифры и символы "/", "-", "_"!'),
             array('id, title, link, menu_id', 'safe', 'on' => 'search'),
         );
     }
@@ -95,8 +96,8 @@ class MenuItem extends CActiveRecord
         $criteria = new CDbCriteria;
         $criteria->compare('menu_id', $this->menu_id);
         $criteria->compare('parent_id', $this->parent_id);
-        $criteria->compare('title', $this->title, true);
-        $criteria->compare('link', $this->link,true);
+        $criteria->compare('t.title', $this->title, true);
+        $criteria->compare('t.link', $this->link,true);
 		$criteria->order = 'sort_order';
 
         return new CActiveDataProvider($this, array(

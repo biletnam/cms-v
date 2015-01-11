@@ -1,10 +1,19 @@
 
 <div class="form">
 <h1>Вход в панель администратора</h1>
+	<div class="prompt">
+		<p>Демо-вход в панель администратора:</p>
+		<span class="span1">Логин: <span class="span2">admin</span></span>
+		<span class="span1">Пароль: <span class="span2">admin</span></span>
+
+		<span></span>
+	</div>
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id' => 'login-form',
 	'enableAjaxValidation' => false,
 )); ?>
+
+
 
 	<p class="note">Поля, отмеченные <span class="required">*</span>, обязательны для заполнения</p>
 
@@ -33,7 +42,3 @@
 <?php $this->endWidget(); ?>
 </div><!-- form -->
 
-<div class="forgotten">
-	<span>!</span>
-	Если Вы забыли пароль и не можете войти в панель администратора - обратитесь к программистам службы поддержки сайта.
-</div>

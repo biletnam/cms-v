@@ -66,6 +66,9 @@ return CMap::mergeArray(
 				'class' => 'application.behaviors.ModulesInformationBehavior',
 			),
 		),
+		'params'=>array(
+			'isDemo'=>false,
+		),
 	),
 	require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'local.php'),
 	require(dirname(__FILE__) . DIRECTORY_SEPARATOR . $branch . '.php')

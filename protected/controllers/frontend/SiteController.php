@@ -11,6 +11,8 @@ class SiteController extends FrontEndController
 	 *
 	 * @return array
 	 */
+    public $layout='main_layout';
+
 	public function actions()
 	{
 		return array(
@@ -81,5 +83,10 @@ class SiteController extends FrontEndController
 	{
         $this->layout='cap';
         $this->render('cap');
+    }
+
+    public function actionContent()
+    {
+        $this->render('content');
     }
 }

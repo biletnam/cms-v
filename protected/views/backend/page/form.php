@@ -22,13 +22,13 @@ Yii::app()->clientScript
 
     <div class="row">
         <?php echo $form->labelEx($model, 'title'); ?>
-        <?php echo $form->textField($model, 'title', array('size' => 60, 'maxlength' => 512, 'id' => 'page-title')); ?>
+        <?php echo $form->textField($model, 'title', array('size' => 60, 'maxlength' => 255, 'id' => 'page-title')); ?>
         <?php echo $form->error($model, 'title'); ?>
     </div>
     
     <div class="row">
         <?php echo $form->labelEx($model, 'link'); ?>
-        <?php echo $form->textField($model, 'link', array('size' => 60, 'maxlength' => 128, 'id' => 'page-link')); ?>
+        <?php echo $form->textField($model, 'link', array('size' => 60, 'maxlength' => 255, 'id' => 'page-link')); ?>
         <?php echo $form->error($model, 'link'); ?>
     </div>
 
