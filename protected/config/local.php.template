@@ -1,0 +1,21 @@
+<?php
+return array(
+    'components' => array(
+        'db' => array(
+            'connectionString' => 'mysql:host=localhost;dbname=your_database_name',
+            'emulatePrepare' => true,
+            'username' => 'your_username',
+            'password' => 'your_password',
+            'charset' => 'utf8',
+        ),
+    ),
+	'modules' => array(
+		// uncomment the following to enable the Gii tool
+		/*'gii' => array(
+			'class' => 'system.gii.GiiModule',
+			'password' => '123456',
+			'ipFilters' => array('*'),
+		),*/
+	),
+);
+?>
